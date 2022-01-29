@@ -1,6 +1,6 @@
 resource "aws_key_pair" "levelup_key" {     # aws_key_pair="for ssh connection"
     key_name = "levelup_key"
-    public_key = (var.PATH_TO_PUBLIC_KEY)   # public_key="define path of paublic key" in varible.tf
+    public_key = (var.PATH_TO_PUBLIC_KEY)   # public_key="define path of public key" in varible.tf
 }
 
 resource "aws_instance" "Myfirstinstance" {   # aws_instance=" creating instance"
@@ -26,8 +26,8 @@ resource "aws_instance" "Myfirstinstance" {   # aws_instance=" creating instance
     }
 
     connection {
-        host          = coalesce() #coalesce function = " it is accept public ip and private ip"
-        type          = ssh
+        host          = coalesce(self.public_ip, self.private_key) #coalesce function = " it is accept public ip and private ip"
+        type          = "ssh"
         user          = var.INSTANCE_USERNAME
         private_key   = file(var.PATH_TO_PRIVATE_KEY)
     }  
