@@ -1,6 +1,6 @@
 resource "aws_key_pair" "levelup_key" {     # aws_key_pair="for ssh connection"
     key_name = "levelup_key"
-    public_key = (var.PATH_TO_PUBLIC_KEY)   # public_key="define path of public key" in varible.tf
+    public_key = file(var.PATH_TO_PUBLIC_KEY)   # public_key="define path of public key" in varible.tf
 }
 
 resource "aws_instance" "Myfirstinstance" {   # aws_instance=" creating instance"

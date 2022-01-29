@@ -1,12 +1,12 @@
 variable "AWS_ACCESS_KEY" {
     type = string
-    default = "AKIA5LVCQDY462B6NQSK"  
+    default = "AKIAY3PJYSEYY7GKQIFF"  
 }
 
 variable "AWS_SECRET_KEY" {}
 
 variable "AWS_REGION" {
-    default = "ap-south-1"
+    default = "us-east-2"
 }
 
 variable "Security_Group" {
@@ -17,10 +17,10 @@ variable "Security_Group" {
 variable "AMIS" {
     type = map
     default = {
-        ap-south-1     = "ami-0828d0df4179c553a"
-        ap-southeast-1 = "ami-0d4c598ab18f1ed1b"
-        ap-southeast-2 = "ami-02ce965e844c396fc"
-        ap-southeast-3 = "ami-0a512b415be2c0853"
+        us-east-1     = "ami-002abb46ec8275406"
+        us-east-2     = "ami-0154b93e8f7147f76"
+        us-west-1	  = "ami-09be156a14463eece"
+        us-west-2     = "ami-08bd106d5eed23706"
     }
   
 }
