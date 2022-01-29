@@ -26,7 +26,7 @@ resource "aws_instance" "Myfirstinstance" {   # aws_instance=" creating instance
     }
 
     connection {
-        host          = coalesce(self.public_ip, self.private_key) #coalesce function = " it is accept public ip and private ip"
+        host          = coalesce(self.public_ip, self.private_ip) #coalesce function = " it is accept public ip and private ip"
         type          = "ssh"
         user          = var.INSTANCE_USERNAME
         private_key   = file(var.PATH_TO_PRIVATE_KEY)
